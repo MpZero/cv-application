@@ -1,6 +1,6 @@
-import "./styles/App.css";
 import Form from "./components/Form.jsx";
 import Cv from "./components/Cv.jsx";
+import "./styles/App.css";
 
 function App() {
   return (

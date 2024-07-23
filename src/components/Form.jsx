@@ -27,6 +27,10 @@ function PersonalInfo() {
           State/Province
           <input type="text" name="state" id="state" />
         </label>
+        <label htmlFor="portfolio">
+          Portfolio link
+          <input type="text" name="portfolio" id="portfolio" />
+        </label>
         <input type="button" value="Submit" />
       </form>
     </>
