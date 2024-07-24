@@ -1,8 +1,8 @@
 function PersonalInfo() {
   return (
-    <>
-      <h2>PERSONAL INFO</h2>
-      <form action="">
+    <div className="form-section form-personal-info-section">
+      <form action="" className="pform">
+        <h2>PERSONAL INFO</h2>
         <label htmlFor="name">
           Name(s)
           <input type="text" name="name" id="name" />
@@ -31,16 +31,16 @@ function PersonalInfo() {
           Portfolio link
           <input type="text" name="portfolio" id="portfolio" />
         </label>
-        <input type="button" value="Submit" />
+        {/* <input type="button" value="Submit" /> */}
       </form>
-    </>
+    </div>
   );
 }
 function WorkInfo() {
   return (
-    <>
-      <h2>WORK</h2>
+    <div className="form-section">
       <form action="">
+        <h2>WORK</h2>
         <label htmlFor="name">
           Company name
           <input type="text" name="name" id="name" />
@@ -62,17 +62,17 @@ function WorkInfo() {
           <textarea name="summary" id="summary"></textarea>
         </label>
         <input type="button" value="Add Company" />
-        <input type="button" value="Submit" />
+        {/* <input type="button" value="Submit" /> */}
       </form>
-    </>
+    </div>
   );
 }
 
 function EducationInfo() {
   return (
-    <>
-      <h2>EDUCATION</h2>
+    <div className="form-section">
       <form action="">
+        <h2>EDUCATION</h2>
         <label htmlFor="name">
           University&apos;s name
           <input type="text" name="name" id="name" />
@@ -89,17 +89,17 @@ function EducationInfo() {
           Brief summary
           <textarea name="summary" id="summary"></textarea>
         </label>
-        <input type="button" value="Submit" />
+        {/* <input type="button" value="Submit" /> */}
       </form>
-    </>
+    </div>
   );
 }
 
 function SkillsInfo() {
   return (
-    <>
-      <h2>CERTIFICATIONS, SKILLS, AND INTERESTS</h2>
+    <div className="form-section">
       <form action="">
+        <h2>CERTIFICATIONS, SKILLS, AND INTERESTS</h2>
         <label htmlFor="certifications">
           Certifications
           <textarea name="certifications" id="certifications"></textarea>
@@ -112,9 +112,9 @@ function SkillsInfo() {
           Interests
           <textarea name="interests" id="interests"></textarea>
         </label>
-        <input type="button" value="Submit" />
+        {/* <input type="button" value="Submit" /> */}
       </form>
-    </>
+    </div>
   );
 }
 

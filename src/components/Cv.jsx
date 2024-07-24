@@ -1,79 +1,115 @@
-function PersonalInfoCv() {
+function PersonalSection() {
   return (
     <div className="personal-info-wrapper">
-      <h1>NAME NAME</h1>
+      <h1>NAME LASTNAME</h1>
       <div className="personal-info-contents">
-        <h2>Email ❖</h2>
-        <h2>Phone ❖</h2>
-        <h2>Location ❖</h2>
-        <h2>Portfolio</h2>
+        <h2>example@example.com ❖</h2>
+        <h2>(15)1515-1515 ❖</h2>
+        <h2>Location, LO ❖</h2>
+        <h2>
+          <a href="">Portfolio</a>
+        </h2>
       </div>
+      <div className="div-line"></div>
     </div>
   );
 }
-function WorkCv() {
+function WorkSection() {
   return (
-    <div className="personal-info-wrapper">
+    <div className="personal-info-wrapper work-section">
       <h3>Company name</h3>
-      <h1>Job position</h1>
-      <h2>Date start</h2>
-      <h2>Date end</h2>
-      <h2>Location</h2>
-      <h2>Portfolio</h2>
+      <div className="work-dates">
+        <h4>Date start</h4>
+        <h4>Date end</h4>
+      </div>
+      <h4>
+        <i>Job position</i>
+      </h4>
+      <h4 className="justify-self-end">
+        <i>Location</i>
+      </h4>
+      <p>
+        general info: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Eos inventore voluptatibus in est hic eaque maxime consequatur
+        repudiandae, nemo nisi fugiat enim provident autem aspernatur dolore
+        possimus quae ullam. Corrupti.
+      </p>
     </div>
   );
 }
-function EducationCv() {
+function EducationSection() {
   return (
-    <div className="personal-info-wrapper">
-      <h1>CV</h1>
-      <h1>NAME NAME</h1>
-      <h2>Email</h2>
+    <div className="personal-info-wrapper education-section">
+      <h3>University name</h3>
+      <h4>date ended</h4>
+      <h4>
+        <i>degree</i>
+      </h4>
+      <h4 className="justify-self-end">
+        <i>city/state</i>
+      </h4>
+      <p>
+        general info: Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Totam voluptatem quisquam minima quod amet! Sint aspernatur pariatur hic
+        suscipit facere eius ratione quam omnis exercitationem. Quis excepturi
+        enim voluptates repellendus.
+      </p>
+    </div>
+  );
+}
+
+function SkillsSection() {
+  return (
+    <div className="personal-info-wrapper skills-section">
       <li>
-        <h2>Certifications</h2>
-        <h2>Skills</h2>
-        <h2>Interests</h2>
+        <h3>Certifications:</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
+          nesciunt maxime quo voluptatum blanditiis.
+        </p>
+      </li>
+      <li>
+        <h3>Skills:</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
+          nesciunt maxime quo voluptatum blanditiis.
+        </p>
+      </li>
+      <li>
+        <h3>Interests:</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
+          nesciunt maxime quo voluptatum blanditiis.
+        </p>
       </li>
     </div>
   );
 }
 
-function SkillsCv() {
-  return (
-    <div className="personal-info-wrapper">
-      <li>
-        <h2>Certifications:</h2>
-      </li>
-      <li>
-        <h2>Skills:</h2>
-      </li>
-      <li>
-        <h2>Interests:</h2>
-      </li>
-    </div>
-  );
-}
+// const printPreview = () => {
+//   console.log(window);
+//   window.print(PersonalSection);
+// };
 function Cv() {
   return (
     <div className="cv-wrapper">
-      <div className="section-wrapper">
-        <PersonalInfoCv />
-      </div>
-      <div className="div-line"></div>
-      <div className="section-wrapper">
-        WORK
-        <div className="div-line"></div>
-        <WorkCv />
+      <div className="section-wrapper personal-info-cv">
+        <PersonalSection />
       </div>
       <div className="section-wrapper">
-        EDUCATION
+        <h2>WORK EXPERIENCE</h2>
         <div className="div-line"></div>
-        <EducationCv />
+        <WorkSection />
       </div>
       <div className="section-wrapper">
-        CERTIFICATIONS, SKILLS & INTERESTS
+        <h2>EDUCATION</h2>
         <div className="div-line"></div>
-        <SkillsCv />
+        <EducationSection />
+      </div>
+      <div className="section-wrapper">
+        <h2>CERTIFICATIONS, SKILLS & INTERESTS</h2>
+        <div className="div-line"></div>
+        <SkillsSection />
       </div>
     </div>
   );
