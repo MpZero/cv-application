@@ -1,7 +1,9 @@
-function PersonalSection() {
+// eslint-disable-next-line react/prop-types
+function PersonalSection({ counter, name }) {
   return (
     <div className="personal-info-wrapper">
-      <h1>NAME LASTNAME</h1>
+      <h1>{name}</h1>
+      <h1>{counter}</h1>
       <div className="personal-info-contents">
         <h2>example@example.com ❖</h2>
         <h2>(15)1515-1515 ❖</h2>
@@ -90,11 +92,13 @@ function SkillsSection() {
 //   console.log(window);
 //   window.print(PersonalSection);
 // };
-function Cv() {
+
+// eslint-disable-next-line react/prop-types
+function Cv({ counter, name }) {
   return (
-    <div className="cv-wrapper">
+    <div className="cv-content-wrapper">
       <div className="section-wrapper personal-info-cv">
-        <PersonalSection />
+        <PersonalSection counter={counter} name={name} />
       </div>
       <div className="section-wrapper">
         <h2>WORK EXPERIENCE</h2>
