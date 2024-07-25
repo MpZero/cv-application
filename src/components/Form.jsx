@@ -54,9 +54,13 @@ function WorkInfo() {
         Stopped working
         <input type="date" name="stoppedWorking" id="stoppedWorking" />
       </label>
+      <label htmlFor="location">
+        Location
+        <input type="text" name="location" id="location" />
+      </label>
       <label htmlFor="workSummary">
         Brief summary
-        <textarea name="summary" id="workSummary"></textarea>
+        <textarea name="workSummary" id="workSummary"></textarea>
       </label>
       <input type="button" value="Add another company" />
       {/* <input type="button" value="Submit" /> */}
@@ -68,9 +72,9 @@ function EducationInfo() {
   return (
     <div className="form-content-wrapper">
       <h2>EDUCATION</h2>
-      <label htmlFor="uniName">
+      <label htmlFor="educationName">
         University&apos;s name
-        <input type="text" name="name" id="uniName" />
+        <input type="text" name="educationName" id="educationName" />
       </label>
       <label htmlFor="degree">
         Degree
@@ -78,11 +82,15 @@ function EducationInfo() {
       </label>
       <label htmlFor="graduationDate">
         Graduation year
-        <input type="date" name="graduationDate" id="graduation" />
+        <input type="date" name="graduationDate" id="graduationDate" />
       </label>
-      <label htmlFor="eduSummary">
+      <label htmlFor="educationLocation">
+        Location
+        <input type="text" name="educationLocation" id="educationLocation" />
+      </label>
+      <label htmlFor="educationSummary">
         Brief summary
-        <textarea name="summary" id="eduSummary"></textarea>
+        <textarea name="educationSummary" id="educationSummary"></textarea>
       </label>
       {/* <input type="button" value="Submit" /> */}
     </div>
@@ -93,9 +101,9 @@ function SkillsInfo() {
   return (
     <div className="form-content-wrapper">
       <h2>CERTIFICATIONS, SKILLS, AND INTERESTS</h2>
-      <label htmlFor="certifications">
+      <label htmlFor="certs">
         Certifications
-        <textarea name="certifications" id="certifications"></textarea>
+        <textarea name="certs" id="certs"></textarea>
       </label>
       <label htmlFor="skills">
         Skills

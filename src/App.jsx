@@ -1,7 +1,6 @@
 import Form from "./components/Form.jsx";
 import Cv from "./components/Cv.jsx";
 import "./styles/App.css";
-// import { useReducer, useState } from "react";
 import { useReducer } from "react";
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
     name: "Gonzalo",
     lastName: "Gomez",
     email: "example@example.com",
-    phone: 1115151515,
+    phone: "1115151515",
     city: "Buenos Aires",
     state: "BA",
     portfolio: "https://github.com/MpZero",
@@ -28,9 +27,10 @@ function App() {
     role3: "",
     startedWorking3: "",
     workSummary3: "",
-    universityName: "Universidad de Buenos Aires",
+    educationName: "Universidad de Buenos Aires",
     degree: "Fisíco de particulas",
-    graduationYear: new Date(2018, 10, 5),
+    educationLocation: "Madrid, ESP",
+    graduationDate: "01-12-16",
     educationSummary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati optio repellendus",
     certs: "Cambridge English Test C2",
@@ -43,7 +43,6 @@ function App() {
   const [data, dispatch] = useReducer(reducer, defaultData);
 
   function reducer(state, action) {
-    console.log({ state }, { action });
     switch (action.type) {
       case "CHANGE": {
         return { ...state, [action.name]: action.value };
@@ -58,7 +57,6 @@ function App() {
   function handleChange(e) {
     const targetValue = e.target.value;
     const data = { type: "CHANGE", name: e.target.name, value: targetValue };
-    console.log(data);
     dispatch(data);
   }
 

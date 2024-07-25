@@ -125,20 +125,21 @@ label {
 }
 
 .personal-info-contents {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  display: flex;
+  justify-content: start;
+  column-gap: 0.5em;
 }
 
 .work-section,
 .education-section {
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto;
   gap: 0.5em;
 }
 
 .work-dates {
   display: flex;
+  justify-self: end;
   gap: 2em;
 }
 
