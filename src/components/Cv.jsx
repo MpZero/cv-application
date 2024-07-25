@@ -1,34 +1,58 @@
-// eslint-disable-next-line react/prop-types
-function PersonalSection({ counter, name }) {
+import PropTypes from "prop-types";
+
+const PersonalSection = ({
+  name,
+  lastName,
+  email,
+  phone,
+  city,
+  state,
+  portfolio,
+}) => {
   return (
     <div className="personal-info-wrapper">
-      <h1>{name}</h1>
-      <h1>{counter}</h1>
+      <h1>{`${name + " " + lastName}`}</h1>
       <div className="personal-info-contents">
-        <h2>example@example.com ❖</h2>
-        <h2>(15)1515-1515 ❖</h2>
-        <h2>Location, LO ❖</h2>
+        <h2>{`${email + " ❖ "}`} </h2>
+        <h2>{`${phone + " ❖ "}`}</h2>
+        <h2>{`${city + ", " + state + " ❖ "}`}</h2>
         <h2>
-          <a href="">Portfolio</a>
+          <a href={`${portfolio}`}>Portfolio</a>
         </h2>
       </div>
       <div className="div-line"></div>
     </div>
   );
-}
-function WorkSection() {
+};
+
+PersonalSection.propTypes;
+
+WorkSection.propTypes = {
+  company: PropTypes.object.isRequired,
+  startedWorking: PropTypes.object.isRequired,
+  stoppedWorking: PropTypes.object.isRequired,
+  role: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+};
+function WorkSection({
+  company,
+  startedWorking,
+  stoppedWorking,
+  role,
+  location,
+}) {
   return (
     <div className="personal-info-wrapper work-section">
-      <h3>Company name</h3>
+      <h3>{`${company}`}</h3>
       <div className="work-dates">
-        <h4>Date start</h4>
-        <h4>Date end</h4>
+        <h4>{`${startedWorking}`}</h4>
+        <h4>{`${stoppedWorking}`}</h4>
       </div>
       <h4>
-        <i>Job position</i>
+        <i>{`${role}`}</i>
       </h4>
       <h4 className="justify-self-end">
-        <i>Location</i>
+        <i>{`${location}`}</i>
       </h4>
       <p>
         general info: Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -63,47 +87,60 @@ function EducationSection() {
 function SkillsSection() {
   return (
     <div className="personal-info-wrapper skills-section">
-      <li>
-        <h3>Certifications:</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
-          nesciunt maxime quo voluptatum blanditiis.
-        </p>
-      </li>
-      <li>
-        <h3>Skills:</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
-          nesciunt maxime quo voluptatum blanditiis.
-        </p>
-      </li>
-      <li>
-        <h3>Interests:</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus non
-          nesciunt maxime quo voluptatum blanditiis.
-        </p>
-      </li>
+      <ul>
+        <li>
+          <h3>Certifications:</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            non nesciunt maxime quo voluptatum blanditiis.
+          </p>
+        </li>
+        <li>
+          <h3>Skills:</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            non nesciunt maxime quo voluptatum blanditiis.
+          </p>
+        </li>
+        <li>
+          <h3>Interests:</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            non nesciunt maxime quo voluptatum blanditiis.
+          </p>
+        </li>
+      </ul>
     </div>
   );
 }
 
-// const printPreview = () => {
-//   console.log(window);
-//   window.print(PersonalSection);
-// };
+Cv.propTypes;
 
-// eslint-disable-next-line react/prop-types
-function Cv({ counter, name }) {
+function Cv({ data }) {
   return (
     <div className="cv-content-wrapper">
       <div className="section-wrapper personal-info-cv">
-        <PersonalSection counter={counter} name={name} />
+        <PersonalSection
+          name={data.name}
+          lastName={data.lastName}
+          email={data.email}
+          phone={data.phone}
+          city={data.city}
+          state={data.state}
+          portfolio={data.portfolio}
+        />
       </div>
       <div className="section-wrapper">
         <h2>WORK EXPERIENCE</h2>
         <div className="div-line"></div>
-        <WorkSection />
+        <WorkSection
+          company={data.company}
+          role={data.role}
+          location={data.location}
+          startedWorking={data.startedWorking}
+          stoppedWorking={data.stoppedWorking}
+          portfolio={data.portfolio}
+        />
       </div>
       <div className="section-wrapper">
         <h2>EDUCATION</h2>

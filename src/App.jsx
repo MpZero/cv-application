@@ -12,11 +12,12 @@ function App() {
     phone: 1115151515,
     city: "Buenos Aires",
     state: "BA",
-    portfolio: "www.google.com",
+    portfolio: "https://github.com/MpZero",
     company: "CERN",
     role: "Researcher",
-    startedWorking: new Date(2020, 1, 3),
-    stoppedWorking: new Date(2020, 12, 4),
+    location: "Location, LO",
+    startedWorking: "YY-MM-DD",
+    stoppedWorking: "YY-MM-DD",
     workSummary:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quidem saepe tempora, excepturi voluptas est quaerat quod ",
     company2: "",
@@ -39,7 +40,6 @@ function App() {
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, nisi suscipit animi a repudiandae",
   };
 
-  // const [counter, setCounter] = useState(0);
   const [data, dispatch] = useReducer(reducer, defaultData);
 
   function reducer(state, action) {

@@ -38,21 +38,21 @@ function WorkInfo() {
   return (
     <div className="form-content-wrapper">
       <h2>WORK EXPERIENCE</h2>
-      <label htmlFor="compName">
+      <label htmlFor="company">
         Company name
-        <input type="text" name="compName" id="compName" />
+        <input type="text" name="company" id="company" />
       </label>
       <label htmlFor="role">
         Role/Job title
         <input type="text" name="role" id="role" />
       </label>
-      <label htmlFor="started">
+      <label htmlFor="startedWorking">
         Started working
-        <input type="date" name="started" id="started" />
+        <input type="date" name="startedWorking" id="startedWorking" />
       </label>
-      <label htmlFor="stopped">
+      <label htmlFor="stoppedWorking">
         Stopped working
-        <input type="date" name="ended" id="stopped" />
+        <input type="date" name="stoppedWorking" id="stoppedWorking" />
       </label>
       <label htmlFor="workSummary">
         Brief summary
@@ -109,8 +109,7 @@ function SkillsInfo() {
     </div>
   );
 }
-
-// eslint-disable-next-line react/prop-types
+Form.propTypes;
 function Form({ handleEvent }) {
   return (
     <form action="" onChange={handleEvent} className="form">
