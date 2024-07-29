@@ -1,28 +1,18 @@
 import PropTypes from "prop-types";
 
-function PersonalSection({
-  name,
-  lastName,
-  email,
-  phone,
-  city,
-  state,
-  portfolio,
-}) {
+function PersonalSection({ ...data }) {
   return (
     <div className="personal-info-wrapper">
-      <h1>{`${name + " " + lastName}`}</h1>
+      <h1>{`${data.name + " " + data.lastName}`}</h1>
       <div className="personal-info-contents">
-        <h2>{`${email}`} </h2>
+        <h2>{`${data.email}`} </h2>
         <div> ❖ </div>
-        <h2>{`${phone}`}</h2>
+        <h2>{`${data.phone}`}</h2>
         <div> ❖ </div>
-
-        <h2>{`${city + ", " + state}`}</h2>
+        <h2>{`${data.personalLocation}`}</h2>
         <div> ❖ </div>
-
         <h2>
-          <a href={`${portfolio}`}>Portfolio</a>
+          <a href={`${data.portfolio}`}>Portfolio</a>
         </h2>
       </div>
       <div className="div-line"></div>
@@ -30,153 +20,82 @@ function PersonalSection({
   );
 }
 
-PersonalSection.propTypes = {
-  name: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  state: PropTypes.string.isRequired,
-  portfolio: PropTypes.string.isRequired,
-};
-
-function WorkSection({
-  company,
-  startedWorking,
-  stoppedWorking,
-  role,
-  location,
-  workSummary,
-}) {
+function WorkSection({ ...data }) {
   return (
     <div className="personal-info-wrapper work-section">
-      <h3>{`${company}`}</h3>
+      <h3>{`${data.company}`}</h3>
       <div className="work-dates">
-        <h4>{`${startedWorking}`}</h4>
-        <h4>{`${stoppedWorking}`}</h4>
+        <h4>{`${data.startedWorking}`}</h4>
+        <h4>{`${data.stoppedWorking}`}</h4>
       </div>
       <h4>
-        <i>{`${role}`}</i>
+        <i>{`${data.role}`}</i>
       </h4>
       <h4 className="justify-self-end">
-        <i>{`${location}`}</i>
+        <i>{`${data.location}`}</i>
       </h4>
-      <p>{`${workSummary}`}</p>
+      <p>{`${data.workSummary}`}</p>
     </div>
   );
 }
-WorkSection.propTypes = {
-  company: PropTypes.string.isRequired,
-  startedWorking: PropTypes.string.isRequired,
-  stoppedWorking: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  workSummary: PropTypes.string.isRequired,
-};
 
-function EducationSection({
-  educationName,
-  degree,
-  graduationDate,
-  educationLocation,
-  educationSummary,
-}) {
+function EducationSection({ ...data }) {
   return (
     <div className="personal-info-wrapper education-section">
-      <h3>{`${educationName}`}</h3>
-      <h4 className="justify-self-end">{`${graduationDate}`}</h4>
+      <h3>{`${data.educationName}`}</h3>
+      <h4 className="justify-self-end">{`${data.graduationDate}`}</h4>
       <h4>
-        <i>{`${degree}`}</i>
+        <i>{`${data.degree}`}</i>
       </h4>
       <h4 className="justify-self-end">
-        <i>{`${educationLocation}`}</i>
+        <i>{`${data.educationLocation}`}</i>
       </h4>
-      <p>{`${educationSummary}`}</p>
+      <p>{`${data.educationSummary}`}</p>
     </div>
   );
 }
-EducationSection.propTypes = {
-  educationName: PropTypes.string.isRequired,
-  degree: PropTypes.string.isRequired,
-  graduationDate: PropTypes.string.isRequired,
-  educationLocation: PropTypes.string.isRequired,
-  educationSummary: PropTypes.string.isRequired,
-};
 
-function SkillsSection({ certs, skills, interests }) {
+function SkillsSection({ ...data }) {
   return (
     <div className="personal-info-wrapper skills-section">
       <ul>
         <li>
           <h3>Certifications:</h3>
-          <p>{`${certs}`}</p>
+          <p>{`${data.certs}`}</p>
         </li>
         <li>
           <h3>Skills:</h3>
-          <p>{`${skills}`}</p>
+          <p>{`${data.skills}`}</p>
         </li>
         <li>
           <h3>Interests:</h3>
-          <p>{`${interests}`}</p>
+          <p>{`${data.interests}`}</p>
         </li>
       </ul>
     </div>
   );
 }
 
-SkillsSection.propTypes = {
-  certs: PropTypes.string.isRequired,
-  skills: PropTypes.string.isRequired,
-  interests: PropTypes.string.isRequired,
-};
-
 function Cv({ data }) {
   return (
     <div className="cv-content-wrapper">
       <div className="section-wrapper personal-info-cv">
-        <PersonalSection
-          name={data.name}
-          lastName={data.lastName}
-          email={data.email}
-          phone={data.phone}
-          city={data.city}
-          state={data.state}
-          portfolio={data.portfolio}
-        />
+        <PersonalSection {...data} />
       </div>
       <div className="section-wrapper">
         <h2>WORK EXPERIENCE</h2>
         <div className="div-line"></div>
-        <WorkSection
-          company={data.company}
-          role={data.role}
-          location={data.location}
-          startedWorking={data.startedWorking}
-          stoppedWorking={data.stoppedWorking}
-          portfolio={data.portfolio}
-          workSummary={data.workSummary}
-        />
+        <WorkSection {...data} />
       </div>
       <div className="section-wrapper">
         <h2>EDUCATION</h2>
         <div className="div-line"></div>
-        <EducationSection
-          educationName={data.educationName}
-          degree={data.degree}
-          location={data.location}
-          graduationDate={data.graduationDate}
-          educationLocation={data.educationLocation}
-          educationSummary={data.educationSummary}
-        />
+        <EducationSection {...data} />
       </div>
       <div className="section-wrapper">
         <h2>CERTIFICATIONS, SKILLS & INTERESTS</h2>
         <div className="div-line"></div>
-        <SkillsSection
-          certs={data.certs}
-          skills={data.skills}
-          interests={data.interests}
-        />
+        <SkillsSection {...data} />
       </div>
     </div>
   );
@@ -185,4 +104,5 @@ function Cv({ data }) {
 Cv.propTypes = {
   data: PropTypes.object.isRequired,
 };
+
 export default Cv;

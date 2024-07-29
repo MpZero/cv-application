@@ -9,8 +9,7 @@ function App() {
     lastName: "Gomez",
     email: "example@example.com",
     phone: "1115151515",
-    city: "Buenos Aires",
-    state: "BA",
+    personalLocation: "city, ST",
     portfolio: "https://github.com/MpZero",
     company: "CERN",
     role: "Researcher",
@@ -28,8 +27,8 @@ function App() {
     startedWorking3: "",
     workSummary3: "",
     educationName: "Universidad de Buenos Aires",
-    degree: "Fisíco de particulas",
-    educationLocation: "Madrid, ESP",
+    degree: "degree",
+    educationLocation: "Location, LO",
     graduationDate: "01-12-16",
     educationSummary:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati optio repellendus",
@@ -43,15 +42,8 @@ function App() {
   const [data, dispatch] = useReducer(reducer, defaultData);
 
   function reducer(state, action) {
-    switch (action.type) {
-      case "CHANGE": {
-        return { ...state, [action.name]: action.value };
-      }
-      case "RESET":
-        return { [action.name]: action.value };
-      default:
-        throw new Error("fail");
-    }
+    // console.log({ state }, { action });
+    return { ...state, [action.name]: action.value };
   }
 
   function handleChange(e) {
@@ -63,7 +55,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <aside className="aside">
-        <Form handleEvent={handleChange} />
+        <Form data={data} handleEvent={handleChange} />
       </aside>
       <main className="main">
         <Cv data={data} />

@@ -1,3 +1,4 @@
+/* ////////// CSS RESET ////////// */
 *,
 *::before,
 *::after {
@@ -6,6 +7,7 @@
 
 * {
   margin: 0;
+  font-family: Arial, Helvetica, serif, Georgia, "Times New Roman", sans-serif;
 }
 
 body {
@@ -44,12 +46,16 @@ ol {
   padding-left: 1em;
 }
 
+a {
+  text-decoration: none;
+}
+
 #root,
 #__next {
   isolation: isolate;
 }
 
-/* ///////////// */
+/* ////////// CSS RESET ////////// */
 
 h1 {
   font-size: 24px;
@@ -58,7 +64,6 @@ h1 {
 
 h2 {
   font-size: 16px;
-  align-self: end;
 }
 
 h3,
@@ -70,6 +75,16 @@ h5 {
 
 p {
   font-size: 12px;
+  grid-column: 1 / span 2;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  padding-block: 0.5em;
 }
 
 .justify-self-end {
@@ -77,6 +92,9 @@ p {
 }
 
 /* ///////////MAIN WRAPPER///////////// */
+body {
+  background-color: #141414;
+}
 
 .app-wrapper {
   display: grid;
@@ -91,13 +109,25 @@ p {
 .form {
   display: grid;
   gap: 1em;
+  background-color: #141414;
 }
 .form-content-wrapper {
-  border: 1px solid rgb(144, 142, 142);
   padding: 1.2em;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 13px;
+  border: 1px solid rgb(144, 142, 142);
+  background: #ffffff;
 }
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.h2-skills {
+  font-size: 1em;
+}
+
 label {
   display: flex;
   flex-direction: column;
@@ -106,6 +136,7 @@ label {
 /* /////////////// CV STYLING //////////////// */
 .div-line {
   border: 1.4px solid black;
+  margin-bottom: 0.5em;
 }
 
 .main {
@@ -114,6 +145,7 @@ label {
 
 .cv-content-wrapper {
   border: 1px solid rgb(144, 142, 142);
+  background: #fefefa;
 }
 
 .section-wrapper {
@@ -134,7 +166,7 @@ label {
 .education-section {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 0.5em;
+  row-gap: 0.2em;
 }
 
 .work-dates {
@@ -143,7 +175,8 @@ label {
   gap: 2em;
 }
 
-.skills-section {
-  display: grid;
-  gap: 0.5em;
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 }
