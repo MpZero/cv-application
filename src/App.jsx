@@ -1,7 +1,8 @@
+import { useReactToPrint } from "react-to-print";
 import Form from "./components/Form.jsx";
 import Cv from "./components/Cv.jsx";
+import { useReducer, useRef } from "react";
 import "./styles/App.css";
-import { useReducer } from "react";
 
 function App() {
   const defaultData = {
@@ -52,13 +53,21 @@ function App() {
     dispatch(data);
   }
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   return (
     <div className="app-wrapper">
       <aside className="aside">
         <Form data={data} handleEvent={handleChange} />
+        <button className="print-btn" onClick={handlePrint}>
+          <b>Print PDF</b>
+        </button>
       </aside>
       <main className="main">
-        <Cv data={data} />
+        <Cv data={data} ref={componentRef} />
       </main>
     </div>
   );

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import { forwardRef } from "react";
 function PersonalSection({ ...data }) {
   return (
     <div className="personal-info-wrapper">
@@ -76,9 +76,9 @@ function SkillsSection({ ...data }) {
   );
 }
 
-function Cv({ data }) {
+const Cv = forwardRef(({ data }, ref) => {
   return (
-    <div className="cv-content-wrapper">
+    <div className="cv-content-wrapper" ref={ref}>
       <div className="section-wrapper personal-info-cv">
         <PersonalSection {...data} />
       </div>
@@ -99,10 +99,10 @@ function Cv({ data }) {
       </div>
     </div>
   );
-}
+});
 
 Cv.propTypes = {
   data: PropTypes.object.isRequired,
 };
-
+Cv.displayName = "Cv";
 export default Cv;
