@@ -139,7 +139,6 @@ function WorkInfo({ data }) {
               defaultValue={data.workSummary}
             ></textarea>
           </label>
-          <input type="button" value="Add another company" />
         </div>
       )}
     </div>
@@ -148,6 +147,7 @@ function WorkInfo({ data }) {
 WorkInfo.propTypes = {
   data: PropTypes.object.isRequired,
 };
+
 function EducationInfo({ data }) {
   const [isFormBodyVisible, setIsFormBodyVisible] = useState(true);
 
